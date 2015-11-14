@@ -1,37 +1,22 @@
-# project/user/views.py
+# user/views.py
 
-
-#################
-#### imports ####
-#################
-
-from flask import render_template, Blueprint, url_for, \
-    redirect, flash, request
+from flask import render_template, Blueprint, url_for, redirect, flash, request
 from flask.ext.login import login_user, logout_user, login_required
 
-from project import bcrypt, db
+from .. import bcrypt, db
 from .models import User
 from .forms import LoginForm, RegisterForm
 
-################
-#### config ####
-################
-
-user_blueprint = Blueprint('user', __name__,)
+# User blueprint
+user_bp = Blueprint('user', __name__,)
 
 
-################
-#### routes ####
-################
-
-@user_blueprint.route('/register', methods=['GET', 'POST'])
+# User blueprint routes
+@user_bp.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm(request.form)
     if form.validate_on_submit():
-        user = User(
-            email=form.email.data,
-            password=form.password.data
-        )
+        user = User(email=form.email.data, password=form.password.data)
         db.session.add(user)
         db.session.commit()
 
@@ -43,7 +28,7 @@ def register():
     return render_template('user/register.html', form=form)
 
 
-@user_blueprint.route('/login', methods=['GET', 'POST'])
+@user_bp.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm(request.form)
     if form.validate_on_submit():
@@ -59,7 +44,7 @@ def login():
     return render_template('user/login.html', title='Please Login', form=form)
 
 
-@user_blueprint.route('/logout')
+@user_bp.route('/logout')
 @login_required
 def logout():
     logout_user()
@@ -67,7 +52,7 @@ def logout():
     return redirect(url_for('main.home'))
 
 
-@user_blueprint.route('/members')
+@user_bp.route('/members')
 @login_required
 def members():
     return render_template('user/members.html')

@@ -1,4 +1,4 @@
-# project/user/forms.py
+# user/forms.py
 
 
 from flask_wtf import Form
@@ -12,17 +12,18 @@ class LoginForm(Form):
 
 
 class RegisterForm(Form):
-    email = TextField(
-        'Email Address',
-        validators=[DataRequired(), Email(message=None), Length(min=6, max=40)])
-    password = PasswordField(
-        'Password',
-        validators=[DataRequired(), Length(min=6, max=25)]
-    )
-    confirm = PasswordField(
-        'Confirm password',
-        validators=[
-            DataRequired(),
-            EqualTo('password', message='Passwords must match.')
-        ]
-    )
+    first_name = TextField('First Name',
+                           validators=[DataRequired(),
+                                       Length(max=50)])
+    last_name = TextField('Last Name', validators=[Length(max=50)])
+    email = TextField('Email Address',
+                      validators=[DataRequired(),
+                                  Email(message=None),
+                                  Length(min=6, max=40)])
+    password = PasswordField('Password',
+                             validators=[DataRequired(),
+                                         Length(min=6, max=25)])
+    confirm = PasswordField('Confirm password',
+                            validators=[DataRequired(),
+                                        EqualTo('password',
+                                        message='Passwords must match.')])

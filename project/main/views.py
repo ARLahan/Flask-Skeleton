@@ -1,30 +1,18 @@
-# project/main/views.py
-
-
-#################
-#### imports ####
-#################
+# main/views.py
 
 from flask import render_template, Blueprint
+from .. import app
+
+# Create blueprint
+main_bp = Blueprint('main', __name__,)
 
 
-################
-#### config ####
-################
-
-main_blueprint = Blueprint('main', __name__,)
-
-
-################
-#### routes ####
-################
-
-
-@main_blueprint.route('/')
+# main blueprint routes
+@main_bp.route('/')
 def home():
-    return render_template('main/home.html')
+    return render_template('main/home.html', app_name=app.config['APP_NAME'])
 
 
-@main_blueprint.route("/about")
+@main_bp.route('/about')
 def about():
-    return render_template("main/about.html")
+    return render_template('main/about.html')

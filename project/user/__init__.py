@@ -1,2 +1,1 @@
-# project/user/__init__.py
-from . import views
+# user/__init__.py
