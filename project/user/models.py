@@ -41,5 +41,9 @@ class User(db.Model):
     def fullname(self):
         return " ".join([self.first_name, self.last_name])
 
+    def __str__(self):
+        return "User {0}: {1}".format(self.id, self.fullname())
+
     def __repr__(self):
-        return '<User: {0}>'.format(self.fullname)
+        return "[{0} {1} id: {2}]".format(self.__class__.__name__,
+                                          type(self), self.id)

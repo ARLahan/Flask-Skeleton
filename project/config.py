@@ -8,8 +8,8 @@ datadir = os.path.abspath(os.path.join(os.path.dirname(basedir), 'data'))
 
 class BaseConfig(object):
     """Base configuration."""
-    APP_NAME = "Numerologia"
-    SECRET_KEY = 'c+n8EzlJRyp55d3wZEKEYkhw7c97aagB+NDWb14Pd//DUvXoAeJxNQsck1'
+    APP_NAME = "Application's name"
+    SECRET_KEY = "Change this SECRET_KEY, because it's not secret anymore."
     DEBUG = False
     BCRYPT_LOG_ROUNDS = 13
     WTF_CSRF_ENABLED = True
@@ -17,6 +17,8 @@ class BaseConfig(object):
     BOOTSTRAP_QUERYSTRING_REVVING = True
     BOOTSTRAP_USE_MINIFIED = True
     BOOTSTRAP_SERVE_LOCAL = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    SEND_FILE_MAX_AGE_DEFAULT = 43200
 
 
 class DevelopmentConfig(BaseConfig):
@@ -27,14 +29,16 @@ class DevelopmentConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + datadir + "/dev.sqlite"
     DEBUG_TB_ENABLED = True
     DEBUG_TB_INTERCEPT_REDIRECTS = False
+    SEND_FILE_MAX_AGE_DEFAULT = 3  # 3 secs
 
 
 class TestingConfig(DevelopmentConfig):
     """Testing configuration."""
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:/'
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
     DEBUG_TB_ENABLED = False
 
 
 class ProductionConfig(BaseConfig):
     """Production configuration."""
-    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/example'
+    SQLALCHEMY_DATABASE_URI = "postgresql:///localhost/example"

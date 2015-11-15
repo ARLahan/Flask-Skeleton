@@ -1,1 +1,1 @@
-# project/public/__init__.py
+# main/__init__.py

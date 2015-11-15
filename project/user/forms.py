@@ -19,10 +19,10 @@ class RegisterForm(Form):
     email = TextField('Email Address',
                       validators=[DataRequired(),
                                   Email(message=None),
-                                  Length(min=6, max=40)])
+                                  Length(min=6, max=255)])
     password = PasswordField('Password',
                              validators=[DataRequired(),
-                                         Length(min=6, max=25)])
+                                         Length(min=6, max=50)])
     confirm = PasswordField('Confirm password',
                             validators=[DataRequired(),
                                         EqualTo('password',

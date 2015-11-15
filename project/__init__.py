@@ -12,8 +12,10 @@ from flask.ext.sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Config
+# Choose which configuration to use, depending on the value
+# assign to the environment variable `APP_CONFIG`:
+# --> `DevelopmentConfig`, `TestingConfig` or `ProductionConfig`
 app.config.from_object(os.environ['APP_CONFIG'])
-
 
 # Extensions
 bcrypt = Bcrypt(app)
@@ -23,8 +25,8 @@ toolbar = DebugToolbarExtension(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# Blueprints
-# main blueprints
+# Blueprints: import and register
+# main blueprint
 from .main.views import main_bp
 app.register_blueprint(main_bp)
 # user blueprint
@@ -34,7 +36,7 @@ app.register_blueprint(user_bp)
 # Login manager
 from .user.models import User
 login_manager.login_view = "user.login"
-login_manager.login_message_category = 'danger'
+login_manager.login_message_category = "danger"
 
 
 @login_manager.user_loader
@@ -45,14 +47,14 @@ def load_user(user_id):
 # Error handlers ----------------------------------------------
 @app.errorhandler(403)
 def forbidden_page(error):
-    return render_template("errors/403.html"), 403
+    return render_template('errors/403.html'), 403
 
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template("errors/404.html"), 404
+    return render_template('errors/404.html'), 404
 
 
 @app.errorhandler(500)
 def server_error_page(error):
-    return render_template("errors/500.html"), 500
+    return render_template('errors/500.html'), 500

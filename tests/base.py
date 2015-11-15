@@ -4,7 +4,7 @@
 from flask.ext.testing import TestCase
 
 from project import app, db
-from project.models import User
+from project.user.models import User
 
 
 class BaseTestCase(TestCase):
@@ -15,7 +15,8 @@ class BaseTestCase(TestCase):
 
     def setUp(self):
         db.create_all()
-        user = User(email="ad@min.com", password="admin_user")
+        user = User(first_name='Test', last_name='app', email='test@admin.com',
+                    password='admin_user')
         db.session.add(user)
         db.session.commit()
 
