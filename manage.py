@@ -1,4 +1,5 @@
 # manage.py
+"""Aplication manager."""
 
 
 import os
@@ -15,13 +16,13 @@ from project.user.models import User
 migrate = Migrate(app, db)
 manager = Manager(app)
 
-# migrations
+# migrations added to manager
 manager.add_command('db', MigrateCommand)
 
 
 @manager.command
 def test():
-    """Runs the unit tests without coverage."""
+    """Run the unit tests without coverage."""
     tests = unittest.TestLoader().discover('tests')
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
@@ -31,7 +32,7 @@ def test():
 
 @manager.command
 def cov():
-    """Runs the unit tests with coverage."""
+    """Run the unit tests with coverage."""
     cov = coverage.coverage(
         branch=True,
         include='project/*',
@@ -53,19 +54,19 @@ def cov():
 
 @manager.command
 def create_db():
-    """Creates the db tables."""
+    """Create database tables."""
     db.create_all()
 
 
 @manager.command
 def drop_db():
-    """Drops the db tables."""
+    """Drop database tables."""
     db.drop_all()
 
 
 @manager.command
 def create_admin():
-    """Creates the admin user."""
+    """Create admin user."""
     db.session.add(User(first_name='Admin', last_name='',
                         email='admin@example.com', password='admin',
                         admin=True))
@@ -74,9 +75,10 @@ def create_admin():
 
 @manager.command
 def create_data():
-    """Creates sample data."""
+    """Create sample data. Not yet implemmented."""
     pass
 
 
 if __name__ == '__main__':
+    """App entry point."""
     manager.run()

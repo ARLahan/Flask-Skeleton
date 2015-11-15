@@ -1,4 +1,5 @@
 # project/config.py
+"""Project configuration."""
 
 import os
 
@@ -8,7 +9,8 @@ datadir = os.path.abspath(os.path.join(os.path.dirname(basedir), 'data'))
 
 class BaseConfig(object):
     """Base configuration."""
-    APP_NAME = "Application's name"
+
+    APP_NAME = "Application name"
     SECRET_KEY = "Change this SECRET_KEY, because it's not secret anymore."
     DEBUG = False
     BCRYPT_LOG_ROUNDS = 13
@@ -23,6 +25,7 @@ class BaseConfig(object):
 
 class DevelopmentConfig(BaseConfig):
     """Development configuration."""
+
     DEBUG = True
     BCRYPT_LOG_ROUNDS = 1
     WTF_CSRF_ENABLED = False
@@ -34,6 +37,7 @@ class DevelopmentConfig(BaseConfig):
 
 class TestingConfig(DevelopmentConfig):
     """Testing configuration."""
+
     TESTING = True
     SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
     DEBUG_TB_ENABLED = False
@@ -41,4 +45,5 @@ class TestingConfig(DevelopmentConfig):
 
 class ProductionConfig(BaseConfig):
     """Production configuration."""
+
     SQLALCHEMY_DATABASE_URI = "postgresql:///localhost/example"

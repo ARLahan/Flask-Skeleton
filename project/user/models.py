@@ -1,4 +1,5 @@
 # user/models.py
+"""User models."""
 
 
 import datetime
@@ -7,6 +8,7 @@ from .. import db, bcrypt
 
 
 class User(db.Model):
+    """User table."""
 
     __tablename__ = "user"
 
