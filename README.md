@@ -65,9 +65,9 @@ Just type :
 $ ./run [-c dev|test|pro]
 ```
 The optional parameters are:
-   - -c dev   for running with development configuration
-   - -c test  for running with testing configuration
-   - -c pro   for running with production configuration
+   - ```sh -c dev```   for running with development configuration
+   - ```sh -c test```  for running with testing configuration
+   - ```sh -c pro```   for running with production configuration
 
 
 ### Testing the application
