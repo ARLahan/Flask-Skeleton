@@ -21,8 +21,8 @@
 
 
 ### Create the database and the admin user:
-
-    
+  
+    ```sh  
     $ export APP_CONFIG="project.config.DevelopmentConfig"
 
     $ python manage.py create_db
@@ -34,7 +34,7 @@
     $ python manage.py create_admin
 
     $ python manage.py create_data
-
+  ```
 
 ### Running the application
 Just type :
