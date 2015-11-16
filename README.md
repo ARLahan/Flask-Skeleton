@@ -5,7 +5,7 @@ but has some improvements, such as:
 
  * Relative imports
 
- * Each of the two basic blueprints (main and user) have:
+ * Completely modular -- each of the two basic blueprints (main and user) have:
    - Their own static folder
    - Their own templates folder
    - Their own views
@@ -43,7 +43,14 @@ but has some improvements, such as:
 
 ## Quick Start
 
-Update the SECRET_KEY in config.py, and then run:
+ * Install the dependencies
+ 
+ ```sh
+$ pip install -r requirements.txt
+```
+
+ * Update the SECRET_KEY in config.py, and then run:
+ 
 ```sh
 $ ./run
 ```
@@ -65,9 +72,9 @@ Just type :
 $ ./run [-c dev|test|pro]
 ```
 The optional parameters are:
-   - ``` -c dev```   for running with development configuration
-   - ``` -c test```  for running with testing configuration
-   - ``` -c pro```   for running with production configuration
+   - ``` -c dev```      for running with development configuration
+   - ``` -c test```     for running with testing configuration
+   - ``` -c pro```      for running with production configuration
 
 
 ### Testing the application
