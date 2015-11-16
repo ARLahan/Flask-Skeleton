@@ -13,33 +13,28 @@
 
  * Install the dependencies
 
-    ```sh
+    
     $ pip install -r requirements.txt
-    ```
+    
 
  * Update the SECRET_KEY in config.py
 
 
 ### Create the database and the admin user:
 
-    ```sh
+    
     $ export APP_CONFIG="project.config.DevelopmentConfig"
-    ```
-    ```sh
+
     $ python manage.py create_db
-    ```
-    ```sh
+
     $ python manage.py db init
-    ```
-    ```sh
+
     $ python manage.py db migrate
-    ```
-    ```sh
+
     $ python manage.py create_admin
-    ```
-    ```sh
+
     $ python manage.py create_data
-    ```
+
 
 ### Running the application
 Just type :
