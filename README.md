@@ -1,5 +1,63 @@
 # Another Flask Skeleton
 
+## How to install and use Flask-Scaffold:
+  - Clone this repository:
+    - git clone https://github.com/ARLahan/Flask-Skeleton.git your_app_name
+  - Create a python virtual environment (virtualenv)
+  - Activate the virtualenv
+  - Install the dependencies:
+    - pip install -r requirements.txt
+  - Run scaffold.py as demonstrated bellow
+
+## Quick Start
+
+ * Install the dependencies
+
+ ```sh
+$ pip install -r requirements.txt
+```
+
+ * Update the SECRET_KEY in config.py
+
+
+### Create the database and the admin user:
+
+```sh
+$ python manage.py create_db
+$ python manage.py db init
+$ python manage.py db migrate
+$ python manage.py create_admin
+$ python manage.py create_data
+```
+
+### Running the application
+Just type :
+
+```sh
+$ ./run [-c dev|test|pro]
+```
+The optional parameters are:
+   - ``` -c dev```      for running with development configuration
+   - ``` -c test```     for running with testing configuration
+   - ``` -c pro```      for running with production configuration
+
+
+### Testing the application
+
+ * Without coverage:
+
+```sh
+$ python manage.py test
+```
+
+ * With coverage:
+
+```sh
+$ python manage.py cov
+```
+
+### Note
+
 This skeleton is based on RealPython's [https://github.com/realpython/flask-scaffold],
 but has some improvements, such as:
 
@@ -39,54 +97,3 @@ but has some improvements, such as:
     - visitor==0.1.2
     - Werkzeug==0.11.2
     - WTForms==2.0.2
-
-
-## Quick Start
-
- * Install the dependencies
- 
- ```sh
-$ pip install -r requirements.txt
-```
-
- * Update the SECRET_KEY in config.py, and then run:
- 
-```sh
-$ ./run
-```
-
-### Creating the database and the admin user:
-
-```sh
-$ python manage.py create_db
-$ python manage.py db init
-$ python manage.py db migrate
-$ python manage.py create_admin
-$ python manage.py create_data
-```
-
-### Runnig the application
-Just type :
-
-```sh
-$ ./run [-c dev|test|pro]
-```
-The optional parameters are:
-   - ``` -c dev```      for running with development configuration
-   - ``` -c test```     for running with testing configuration
-   - ``` -c pro```      for running with production configuration
-
-
-### Testing the application
-
- * Without coverage:
-
-```sh
-$ python manage.py test
-```
-
- * With coverage:
-
-```sh
-$ python manage.py cov
-```
