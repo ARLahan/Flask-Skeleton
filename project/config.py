@@ -30,6 +30,7 @@ class DevelopmentConfig(BaseConfig):
     BCRYPT_LOG_ROUNDS = 1
     WTF_CSRF_ENABLED = False
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + datadir + "/dev.sqlite"
+    SQLALCHEMY_ECHO = True
     DEBUG_TB_ENABLED = True
     DEBUG_TB_INTERCEPT_REDIRECTS = False
     SEND_FILE_MAX_AGE_DEFAULT = 3  # 3 secs

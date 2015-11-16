@@ -9,6 +9,8 @@ __pycache__/
 .Python
 .idea
 bin/
+data/
+migrations/
 env/
 build/
 develop-eggs/
@@ -16,9 +18,11 @@ dist/
 downloads/
 eggs/
 .eggs/
+flask/
 include/
 lib/
 lib64/
+lib64
 parts/
 sdist/
 var/
