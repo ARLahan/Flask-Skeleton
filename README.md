@@ -1,6 +1,6 @@
 # Another Flask Skeleton
 
-## How to install and use Flask-Scaffold:
+## How to install and use Flask-Skeleton:
   - Clone this repository:
     - git clone https://github.com/ARLahan/Flask-Skeleton.git your_app_name
   - Create a python virtual environment (virtualenv)
