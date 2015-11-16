@@ -24,10 +24,20 @@
 
     ```sh
     $ export APP_CONFIG="project.config.DevelopmentConfig"
+    ```
+    ```sh
     $ python manage.py create_db
+    ```
+    ```sh
     $ python manage.py db init
+    ```
+    ```sh
     $ python manage.py db migrate
+    ```
+    ```sh
     $ python manage.py create_admin
+    ```
+    ```sh
     $ python manage.py create_data
     ```
 
