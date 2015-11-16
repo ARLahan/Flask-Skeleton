@@ -13,4 +13,4 @@ script:
   - python manage.py runserver
 
 env:
-  - APP_CONFIG="project.config.DevelopmentConfig"
+  - APP_CONFIG="project.config.TestingConfig"
