@@ -22,7 +22,7 @@
 
 ### Create the database and the admin user:
   
-    ```sh  
+  ```sh 
     $ export APP_CONFIG="project.config.DevelopmentConfig"
 
     $ python manage.py create_db
