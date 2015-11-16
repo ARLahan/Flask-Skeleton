@@ -13,29 +13,29 @@
 
  * Install the dependencies
 
- ```sh
-$ pip install -r requirements.txt
-```
+     ```sh
+    $ pip install -r requirements.txt
+    ```
 
  * Update the SECRET_KEY in config.py
 
 
 ### Create the database and the admin user:
 
-```sh
-$ python manage.py create_db
-$ python manage.py db init
-$ python manage.py db migrate
-$ python manage.py create_admin
-$ python manage.py create_data
-```
+    ```sh
+    $ python manage.py create_db
+    $ python manage.py db init
+    $ python manage.py db migrate
+    $ python manage.py create_admin
+    $ python manage.py create_data
+    ```
 
 ### Running the application
 Just type :
 
-```sh
-$ ./run [-c dev|test|pro]
-```
+  ```sh
+  $ ./run [-c dev|test|pro]
+  ```
 The optional parameters are:
    - ``` -c dev```      for running with development configuration
    - ``` -c test```     for running with testing configuration
@@ -46,15 +46,15 @@ The optional parameters are:
 
  * Without coverage:
 
-```sh
-$ python manage.py test
-```
+    ```sh
+    $ python manage.py test
+    ```
 
  * With coverage:
 
-```sh
-$ python manage.py cov
-```
+    ```sh
+    $ python manage.py cov
+    ```
 
 ### Note
 
