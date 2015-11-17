@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block css %}
+    <link href="{{ url_for('user.static', filename='styles/user.css') }}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block content %}
+  <header class="content-header"><span class="center">
+    <h1>Please login</h1></span>
+  </header>
+
+  <br>
+
+  <form class="form" role="form" method="post" action="">
+
+    {{ form.csrf_token }}
+    {{ form.hidden_tag() }}
+    {{ wtf.form_errors(form, hiddens="only") }}
+
+    <div class="col-lg-4 col-sm-4">
+
+      {{ wtf.form_field(form.email) }}
+      {{ wtf.form_field(form.password) }}
+
+      <button type="submit" class="btn btn-primary">
+        <span class="glyphicon glyphicon-log-out"></span> Sign in
+      </button>
+
+      <a href="{{ url_for('user.register') }}" class="btn btn-warning" role="button">
+        <span class="glyphicon glyphicon-user"></span> Need to register?</a>
+
+    </div>
+
+  </form>
+
+{% endblock content %}

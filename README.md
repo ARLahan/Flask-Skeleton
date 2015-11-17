@@ -13,35 +13,35 @@
 
  * Install the dependencies
 
-    
+
     $ pip install -r requirements.txt
-    
+
 
  * Update the SECRET_KEY in config.py
 
 
 ### Create the database and the admin user:
-  
-  ```sh 
-    $ export APP_CONFIG="project.config.DevelopmentConfig"
 
-    $ python manage.py create_db
+```sh
+  $ export APP_CONFIG="project.config.DevelopmentConfig"
 
-    $ python manage.py db init
+  $ python manage.py create_db
 
-    $ python manage.py db migrate
+  $ python manage.py db init
 
-    $ python manage.py create_admin
+  $ python manage.py db migrate
 
-    $ python manage.py create_data
-  ```
+  $ python manage.py create_admin
+
+  $ python manage.py create_data
+```
 
 ### Running the application
 Just type :
 
-  ```sh
+```sh
   $ ./run [-c dev|test|pro]
-  ```
+```
 The optional parameters are:
    - ``` -c dev```      for running with development configuration
    - ``` -c test```     for running with testing configuration
@@ -64,42 +64,45 @@ The optional parameters are:
 
 ### Note
 
-This skeleton is based on RealPython's [https://github.com/realpython/flask-scaffold],
+This skeleton is inspired on RealPython's [https://github.com/realpython/flask-scaffold],
 but has some improvements, such as:
 
- * Relative imports
+  * Relative imports
 
- * Completely modular -- each of the two basic blueprints (main and user) have:
+  * Fully multi-skeleton:
+    - Just add a new skeleton to the skeletons directory,
+      update scaffold.py with the new skeleton and then run
+
+  * Basic localization
+
+  * The new project has two basic blueprints/packages (main and user) which have:
    - Their own static folder
    - Their own templates folder
    - Their own views
    - Their own models
    - Their own forms
 
- * It runs under Python 2.7+ and 3.3+ (including 3.5)
+  * It runs under Python 2.7+ and 3.3+ (including 3.5)
 
- * It has been tested (and passed) with the following dependencies:
-    - alembic==0.8.3
-    - blinker==1.4
-    - coverage==4.0.2
-    - dominate==2.1.16
-    - Flask==0.10.1
-    - Flask-Bcrypt==0.6.2
-    - Flask-Bootstrap==3.3.5.7
-    - Flask-DebugToolbar==0.10.0
-    - Flask-Login==0.3.2
-    - Flask-Migrate==1.6.0
-    - Flask-Script==2.0.5
-    - Flask-SQLAlchemy==2.1
-    - Flask-Testing==0.4.2
-    - Flask-WTF==0.12
-    - itsdangerous==0.24
-    - Jinja2==2.8
-    - Mako==1.0.3
-    - MarkupSafe==0.23
-    - python-bcrypt==0.3.1
-    - python-editor==0.4
-    - SQLAlchemy==1.0.9
-    - visitor==0.1.2
-    - Werkzeug==0.11.2
-    - WTForms==2.0.2
+  * It has been tested (and passed) with the following dependencies:
+
+     - alembic==0.8.3
+     - Babel==2.1.1
+     - coverage==4.0.2
+     - Flask==0.10.1
+     - Flask-Babel==0.9
+     - Flask-Bcrypt==0.6.2
+     - Flask-Bootstrap==3.3.5.7
+     - Flask-DebugToolbar==0.10.0
+     - Flask-Login==0.3.2
+     - Flask-Migrate==1.6.0
+     - Flask-Script==2.0.5
+     - Flask-SQLAlchemy==2.1
+     - Flask-Testing==0.4.2
+     - Flask-WTF==0.12
+     - Jinja2==2.8
+     - SQLAlchemy==1.0.9
+     - Werkzeug==0.11.2
+     - WTForms==2.0.2
+
+NOLICENCE.
