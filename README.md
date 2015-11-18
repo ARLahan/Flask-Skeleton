@@ -1,24 +1,22 @@
 # Another Flask Skeleton
-
 ## How to install and use Flask-Skeleton:
+=========================================
   - Clone this repository:
     - git clone https://github.com/ARLahan/Flask-Skeleton.git your_app_name
   - Create a python virtual environment (virtualenv)
   - Activate the virtualenv
   - Install the dependencies:
     - pip install -r requirements.txt
-  - Run scaffold.py as demonstrated bellow
+  - Follow the next steps below
 
 ## Quick Start
+==============
 
- * Install the dependencies
+### Install the dependencies
 
-
+  ```sh
     $ pip install -r requirements.txt
-
-
- * Update the SECRET_KEY in config.py
-
+  ```
 
 ### Create the database and the admin user:
 
@@ -36,8 +34,7 @@
   $ python manage.py create_data
 ```
 
-### Running the application
-Just type :
+### Run the application
 
 ```sh
   $ ./run [-c dev|test|pro]
@@ -62,20 +59,18 @@ The optional parameters are:
     $ python manage.py cov
     ```
 
-### Note
-
-This skeleton is inspired on RealPython's [https://github.com/realpython/flask-scaffold],
+## Note
+=======
+This skeleton is inspired on
+RealPython's [https://github.com/realpython/flask-scaffold],
 but has some improvements, such as:
 
   * Relative imports
 
-  * Fully multi-skeleton:
-    - Just add a new skeleton to the skeletons directory,
-      update scaffold.py with the new skeleton and then run
-
   * Basic localization
 
-  * The new project has two basic blueprints/packages (main and user) which have:
+  * The new project has two basic blueprints/packages
+    (main and user) which have:
    - Their own static folder
    - Their own templates folder
    - Their own views
@@ -105,4 +100,4 @@ but has some improvements, such as:
      - Werkzeug==0.11.2
      - WTForms==2.0.2
 
-NOLICENCE.
+NO LICENCE.
