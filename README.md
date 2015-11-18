@@ -1,6 +1,6 @@
 # Another Flask Skeleton
 ## How to install and use Flask-Skeleton:
-=========================================
+
   - Clone this repository:
     - git clone https://github.com/ARLahan/Flask-Skeleton.git your_app_name
   - Create a python virtual environment (virtualenv)
@@ -10,7 +10,7 @@
   - Follow the next steps below
 
 ## Quick Start
-==============
+
 
 ### Install the dependencies
 
@@ -60,7 +60,7 @@ The optional parameters are:
     ```
 
 ## Note
-=======
+
 This skeleton is inspired on
 RealPython's [https://github.com/realpython/flask-scaffold],
 but has some improvements, such as:
