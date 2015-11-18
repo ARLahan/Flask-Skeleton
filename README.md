@@ -1,4 +1,4 @@
-# Another Flask Skeleton
+# Another Flask Skeleton     ![Traviy](https://travis-ci.org/ARLahan/Flask-Skeleton.svg "Travis")
 ## How to install and use Flask-Skeleton:
 
   - Clone this repository:
