@@ -6,6 +6,9 @@ python:
   - "3.5"
   - "2.7.10"
 
+before_install:
+  - pip install codecov
+
 install:
   - pip install -r requirements.txt
 
@@ -15,8 +18,5 @@ script:
 env:
   - APP_CONFIG="project.config.TestingConfig"
 
-before_install:
-  - pip install codecov
-  
 after_success:
   - codecov
