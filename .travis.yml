@@ -14,3 +14,9 @@ script:
 
 env:
   - APP_CONFIG="project.config.TestingConfig"
+
+before_install:
+  - pip install codecov
+  
+after_success:
+  - codecov
