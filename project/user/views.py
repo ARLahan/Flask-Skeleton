@@ -32,7 +32,7 @@ def register():
         login_user(user)
 
         flash('Thank you for registering.', 'success')
-        return redirect(url_for('.members'))
+        return redirect(url_for('.dashboard'))
 
     return render_template('register.html', form=form)
 
@@ -47,7 +47,7 @@ def login():
                 user.password, request.form['password']):
             login_user(user)
             flash('You are logged in. Welcome!', 'success')
-            return redirect(url_for('.members'))
+            return redirect(url_for('.dashboard'))
         else:
             flash('Invalid email and/or password.', 'danger')
             return render_template('login.html', form=form)
@@ -66,6 +66,6 @@ def logout():
 @user_bp.route('/')
 @user_bp.route('/dashboard')
 @login_required
-def members():
+def dashboard():
     """User area view."""
-    return render_template('members.html')
+    return render_template('dashboard.html')
