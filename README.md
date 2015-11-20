@@ -16,7 +16,8 @@
 ### Install the dependencies
 
   ```sh
-    $ pip install -r requirements.txt
+    $ pip install -r requirements.txt  (for production)
+    $ pip install -r dev.txt  (for development)
   ```
 
 ### Create the database and the admin user:

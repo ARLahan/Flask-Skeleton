@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Author: Al-Rama Lahan <lahangit@gmail.com>.
-# NOLICENCE
+# Author: Al-Ramaa Lahan <lahangit@gmail.com>.
+# NO LICENCE
 """Project init."""
 
 import os
@@ -32,7 +32,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 # Load jinja2 custom filters
-from .utils import Jinja2Filters
+from .utils import datetime_filter
 
 # Blueprints: import and register
 # main blueprint
