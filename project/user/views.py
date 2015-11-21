@@ -34,7 +34,7 @@ def register():
         flash('Thank you for registering.', 'success')
         return redirect(url_for('.dashboard'))
 
-    return render_template('register.html', form=form)
+    return render_template('user/register.html', form=form)
 
 
 @user_bp.route('/login', methods=['GET', 'POST'])
@@ -50,8 +50,8 @@ def login():
             return redirect(url_for('.dashboard'))
         else:
             flash('Invalid email and/or password.', 'danger')
-            return render_template('login.html', form=form)
-    return render_template('login.html', title='Please Login', form=form)
+            return render_template('user/login.html', form=form)
+    return render_template('user/login.html', title='Please Login', form=form)
 
 
 @user_bp.route('/logout')
@@ -60,7 +60,7 @@ def logout():
     """User logout view."""
     logout_user()
     flash('You were logged out. Bye!', 'success')
-    return redirect(url_for('main.home'))
+    return redirect(url_for('user/main.home'))
 
 
 @user_bp.route('/')
@@ -68,4 +68,4 @@ def logout():
 @login_required
 def dashboard():
     """User area view."""
-    return render_template('dashboard.html')
+    return render_template('user/dashboard.html')

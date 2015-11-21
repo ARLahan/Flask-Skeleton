@@ -15,10 +15,10 @@ main_bp = Blueprint('main', __name__,
 @main_bp.route('/')
 def home():
     """Home view."""
-    return render_template('home.html')
+    return render_template('main/home.html')
 
 
 @main_bp.route('/about')
 def about():
     """About view."""
-    return render_template('about.html')
+    return render_template('main/about.html')
