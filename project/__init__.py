@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Author: Al-Ramaa Lahan <lahangit@gmail.com>.
-# NO LICENCE
+# NO LICENSE
 """Project init."""
 
 import os
@@ -20,7 +20,7 @@ app = Flask(__name__)
 # assign to the environment variable `APP_CONFIG`:
 # --> `DevelopmentConfig`, `TestingConfig` or `ProductionConfig`
 app.config.from_object(os.environ['APP_CONFIG'])
-app.__str__ = app.config['APP_NAME']  # Define the app name for humans
+app.name = app.config['APP_NAME']  # Define the app name for humans
 
 
 # Extensions

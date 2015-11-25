@@ -102,4 +102,4 @@ but has some improvements, such as:
      - Werkzeug==0.11.2
      - WTForms==2.0.2
 
-NO LICENCE.
+NO LICENSE.
